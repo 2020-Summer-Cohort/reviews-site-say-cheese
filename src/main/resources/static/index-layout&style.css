@@ -67,13 +67,69 @@ h6 {
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: gold;
     opacity: 30%;
     border-radius: 15px;
 }
 
+.soft-cheese div {
+    background-color: rgb(250, 182, 56);
+}
 
+.hard-cheese div {
+    background-color: orange;
+}
 
-h2 {
-    background-color: paleturquoise;
+.tag-section {
+    background-color: #52AA5E;
+    margin: 0 50px;
+    border-radius: 15px;
+    position: relative;
+    color: white;
+    
+}
+
+.color-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color:rgb(250, 182, 56);
+    opacity: 30%;
+    border-radius: 15px;
+    
+}
+
+.tag-section hr {
+    width: 90%;
+}
+
+.tag-section h2 {
+    margin: 0 50px;
+    margin-top: 10px;
+    height: 60px;
+    line-height: 60px;
+    z-index: 100;
+    position: relative;
+    text-align: center;
+}
+
+.tag-section ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0 50px;
+    justify-content: center;
+    z-index: 100;
+    position: relative;
+}
+
+.tag-section ul li{
+    margin: 20px;
+}
+
+.tag-section a{
+    color: white;
+    text-decoration: none;
+    font-size: 16pt;
 }
