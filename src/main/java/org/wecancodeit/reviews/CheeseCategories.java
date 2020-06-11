@@ -2,14 +2,14 @@ package org.wecancodeit.reviews;
 
 import java.util.Collection;
 
-public class CheeseCategory {
+public class CheeseCategories {
 
     private String nameCheese;
     private String cheeseType;
     private Collection<Cheeses> Cheeses;
 
 
-    public CheeseCategory(String cheeseType, String nameCheese, Collection<Cheeses> cheeses) {
+    public CheeseCategories(String cheeseType, String nameCheese, Collection<Cheeses> cheeses) {
         this.cheeseType = cheeseType;
         this.nameCheese = nameCheese;
         Cheeses = cheeses;
