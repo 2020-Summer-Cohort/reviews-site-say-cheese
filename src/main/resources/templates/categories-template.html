@@ -1,12 +1,34 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns: th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Title</title>
-</head><body>
-
+    dth<title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <h1 class="header__title"> reviews</h1>
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-list-item">
+                    <a href="review-template.html" class="header__nav-link">Home</a>
+                </li>
+                <li class="header__nav-list-item">
+                    <a href="" class="header__nav-link">#HashTags</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+<!--        <ul class="campuses__list">-->
+<!--            <li th:each="campus: ${campuses}" class="campuses__list-item">-->
+<!--                <a th:text="${campus.name}" th:href="@{/campuses/${campus.name}" class="campuses__link">Columbus</a>-->
+<!--            </li>-->
+<!--        </ul>-->
+    </main>
+</div>
 </body>
 </html>
