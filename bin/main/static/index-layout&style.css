@@ -27,7 +27,7 @@ h6 {
 }
 
 .soft-cheese {
-    background-image: url("/src/main/resources/static/images/Mozzarella\ Cheese.jfif");
+    background-image: url("./images/Mozzarella\ Cheese.jfif");
     height: 500px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -37,7 +37,7 @@ h6 {
 }
 
 .hard-cheese {
-    background-image: url("/src/main/resources/static/images/Parmesan\ Cheese.jfif");
+    background-image: url("./images/Parmesan\ Cheese.jfif");
     height: 500px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -79,15 +79,6 @@ h6 {
     background-color: orange;
 }
 
-.tag-section {
-    background-color: #52AA5E;
-    margin: 0 50px;
-    border-radius: 15px;
-    position: relative;
-    color: white;
-    
-}
-
 .color-section {
     position: absolute;
     top: 0;
@@ -98,38 +89,4 @@ h6 {
     opacity: 30%;
     border-radius: 15px;
     
-}
-
-.tag-section hr {
-    width: 90%;
-}
-
-.tag-section h2 {
-    margin: 0 50px;
-    margin-top: 10px;
-    height: 60px;
-    line-height: 60px;
-    z-index: 100;
-    position: relative;
-    text-align: center;
-}
-
-.tag-section ul {
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    margin: 0 50px;
-    justify-content: center;
-    z-index: 100;
-    position: relative;
-}
-
-.tag-section ul li{
-    margin: 20px;
-}
-
-.tag-section a{
-    color: white;
-    text-decoration: none;
-    font-size: 16pt;
 }
