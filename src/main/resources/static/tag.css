@@ -32,6 +32,10 @@
 
 .tag-section ul li {
   margin: 20px;
+  
+}
+ul{
+  list-style-type: none;
 }
 
 .tag-section a {

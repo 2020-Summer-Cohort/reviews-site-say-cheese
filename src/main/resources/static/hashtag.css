@@ -1,0 +1,64 @@
+.cheese-pic {
+    width: 300px;
+    height: 100px;
+    
+}
+
+
+
+.list-cheeses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.list-cheeses li {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 300px;
+    height: 100px;
+    position: relative;
+}
+
+.list-cheeses a {
+    line-height: 40px;
+    color: white;
+    text-decoration: none;
+    text-shadow: 0 0 10px burlywood, 0 0 10px burlywood, 0 0 10px burlywood;
+    
+}
+
+
+.list-cheeses a span {
+    position: absolute;
+    width: 100%;
+     bottom: 50%; 
+    text-align: center;
+    font-size: x-large;
+}
+
+.list-cheeses li div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.pic1 div {
+    background-color: bisque;
+    background-size: cover;
+    border-radius: 15px;
+}
+
+.pic2 div {
+    background-color: bisque;
+    background-size: cover;
+    border-radius: 15px;
+}
+
+.pic3 div {
+    background-color: bisque;
+    background-size: cover;
+    border-radius: 15px;
+}
