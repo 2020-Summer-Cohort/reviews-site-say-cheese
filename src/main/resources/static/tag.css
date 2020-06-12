@@ -1,0 +1,41 @@
+.tag-section {
+  background-color: #52aa5e;
+  margin: 0 50px;
+  border-radius: 15px;
+  position: relative;
+  color: white;
+}
+
+.tag-section hr {
+  width: 90%;
+}
+
+.tag-section h2 {
+  margin: 0 50px;
+  margin-top: 10px;
+  height: 60px;
+  line-height: 60px;
+  z-index: 100;
+  position: relative;
+  text-align: center;
+}
+
+.tag-section ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0 50px;
+  justify-content: center;
+  z-index: 100;
+  position: relative;
+}
+
+.tag-section ul li {
+  margin: 20px;
+}
+
+.tag-section a {
+  color: white;
+  text-decoration: none;
+  font-size: 16pt;
+}

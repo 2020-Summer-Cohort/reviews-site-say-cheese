@@ -31,15 +31,20 @@ h1 {
     width: 300px;
     height: 300px;
     position: relative;
-    text-align: right;
 }
 
-.list-cheeses li a {
-    padding-right: 20px;
+.list-cheeses a {
     line-height: 40px;
     color: white;
     text-decoration: none;
-    text-shadow: 0 0 10px black, 0 0 10px black, 0 0 10px black;    
+    text-shadow: 0 0 10px black, 0 0 10px black, 0 0 10px black;
+}
+
+.list-cheeses a span {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
 }
 
 .list-cheeses li div {
@@ -49,20 +54,20 @@ h1 {
     z-index: -1;
 }
 
-.list-cheeses li:nth-child(1) div {
-    background-image: url(/src/main/resources/static/images/Parm.jpg);
+.pic1 div {
+    background-image: url(./images/Parm.jpg);
     background-size: cover;
     border-radius: 15px;
 }
 
-.list-cheeses li:nth-child(2) div {
-    background-image: url(/src/main/resources/static/images/Pecorino-Romano-cheese.jpg);
+.pic2 div {
+    background-image: url(./images/Pecorino-Romano-cheese.jpg);
     background-size: cover;
     border-radius: 15px;
 }
 
-.list-cheeses li:nth-child(3) div {
-    background-image: url(/src/main/resources/static/images/Asiago_cheese.jpg);
+.pic3 div {
+    background-image: url(./images/Asiago_cheese.jpg);
     background-size: cover;
     border-radius: 15px;
 }
