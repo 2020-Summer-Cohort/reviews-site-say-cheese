@@ -8,7 +8,7 @@ public class CheeseCategory {
     private Collection<Review> reviews;
 
 
-    public CheeseCategory(String cheeseType, String nameCheese, Collection<Review> reviews) {
+    public CheeseCategory(String cheeseType, Collection<Review> reviews) {
         this.cheeseType = cheeseType;
         this.reviews = reviews  ;
     }
