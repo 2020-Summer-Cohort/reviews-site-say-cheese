@@ -5,9 +5,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     dth<title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index-layout&style.css">
 </head>
 <body>
+<nav>
+<!--    <ul class = "list-cheese"th:each = "review:${cheesecategory.reviews}">-->
+<!--        <a class = "pic1" th:href = "@{'/reviews/' + ${review.getCheeseName()}}"-->
+<!--        <li><span th:text="${review.getCheeseName()}"></span></li></a>-->
+    <section class="navigation-bar">
+        <div class="left-side">
+            <div class="navigation-bar-top">
+                <a href="./index.html">Home</a>
+            </div>
+            <div class="navigation-bar-top">
+
+<!--                <a th:href="@{'/cheesecategory/' + ${cheesecategory.GetCheeseType()}}"></a>-->
+<!--The above doesnt work for some reason, we might need travis again?-->
+            </div>
+            <div class="navigation-bar-top">
+                <a href="./category-hard.html">Hard Cheese</a>
+            </div>
+        </div>
+    </section>
+</nav>
+
 <div class="container">
     <header class="header">
         <h1 class="header__title"> reviews</h1>
