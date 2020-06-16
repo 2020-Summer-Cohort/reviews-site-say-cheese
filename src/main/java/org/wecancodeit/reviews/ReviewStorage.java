@@ -26,4 +26,8 @@ public class ReviewStorage {
         reviews.put(review3.getCheeseName(), review3);
         reviews.put(review4.getCheeseName(), review4);
     }
+
+    public Review findReviewByCheeseName(String cheeseName) {
+        return reviews.get(cheeseName);
     }
+}

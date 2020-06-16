@@ -5,14 +5,24 @@ xmlns:th="http://www.thymeleaf.org">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./static/category-hard-layout&style.css" type="text/css" />
+    <link rel="stylesheet" href="/category-hard-layout&style.css" type="text/css" />
 </head>
 <body>
     <h1 th:text="${cheesecategory.cheeseType}"></h1>
-        <ul class="list-cheeses">
-            <a class="pic1" href="review-hard.html"><li><span>Cheese Type</span><div class="cheese-pic"></div></li></a>
-            <a class="pic2" href="review-hard.html"><li><span>Cheese Type</span><div class="cheese-pic"></div></li></a>
-            <a class="pic3" href="review-hard.html"><li><span>Cheese Type</span><div class="cheese-pic"></div></li></a>
+
+<!--            th:text= "${book.title}" th:href="@{'/books/'+${book.title}}-->
+<!--            th:href="@{'/movies/'+ ${movie.title}}"-->
+
+<!--            <article th:each="movie:${categories.movies}"   >-->
+<!--                <a th:href="@{'/movies/'+ ${movie.title}}" >-->
+<!--                    <h2 class="category-title" th:text="${movie.title}"> </h2>-->
+<!--                </a>-->
+<!--            </article>-->
+            <ul class = "list-cheese"th:each = "review:${cheesecategory.reviews}">
+                <a class = "pic1" th:href = "@{'/reviews/' + ${review.getCheeseName()}}"><li><span th:text="${review.getCheeseName()}"></span></li></a>
+<!--            <a class="pic1" th:href="@{'/reviews/'+ ${cheesecategory.}}"><li><span>Cheese Type</span><div class="cheese-pic"></div></li></a>-->
+<!--            <a class="pic2" href="review-hard.html"><li><span>Cheese Type</span><div class="cheese-pic"></div></li></a>-->
+<!--            <a class="pic3" href="review-hard.html"><li><span>Cheese Type</span><div class="cheese-pic"></div></li></a>-->
         </ul>
 
 </body>

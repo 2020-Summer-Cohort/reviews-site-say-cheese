@@ -1,11 +1,25 @@
 package org.wecancodeit.reviews;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller 
 public class ReviewController {
 
-    private Review review;
+    ReviewStorage reviewStorage;
+
+    public ReviewController(ReviewStorage reviewStorage){
+        this.reviewStorage = reviewStorage;
+
+    }
+
+@RequestMapping("reviews/{cheeseName}")
+    public String showSingleReview(@PathVariable String cheeseName, Model model){
+        model.addAttribute("reviewToDisplay",reviewStorage.findReviewByCheeseName(cheeseName));
+        return "review-template";
+}
 
 
 
