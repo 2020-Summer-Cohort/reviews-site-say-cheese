@@ -5,12 +5,12 @@ import java.util.Collection;
 public class CheeseCategory {
 
     private String cheeseType;
-    private Collection<Review> reviews;
+//    private Collection<Review> reviews;
 
-
-    public CheeseCategory(String cheeseType, Collection<Review> reviews) {
+    public CheeseCategory(String cheeseType){
+//    public CheeseCategory(String cheeseType, Collection<Review> reviews) {
         this.cheeseType = cheeseType;
-        this.reviews = reviews  ;
+//        this.reviews = reviews  ;
     }
 
 
@@ -18,8 +18,8 @@ public class CheeseCategory {
         return cheeseType;
     }
 
-    public Collection<Review> getReviews() {
-        return reviews;
-    }
+//    public Collection<Review> getReviews() {
+//        return reviews;
+//    }
 
 }
