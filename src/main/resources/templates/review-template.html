@@ -5,21 +5,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./static/review-layout&style.css" type="text/css" />
+    <link rel="stylesheet" href="/review-layout&style.css" type="text/css" />
 </head>
 <body>
 <h1 th:text="${reviewToDisplay.cheeseName}"></h1>
 
 <section class="cheese-review">
     <section class="cheese-data">
-        <h3 th:text = "${reviewToDisplay.texture}"></h3>
-        <h3 th:text = "${reviewToDisplay.milkSource}"></h3>
-        <h3 th:text = "${reviewToDisplay.geographicLocation}"></h3>
-        <h3 th:text = "${reviewToDisplay.userRating}"></h3>
-        <h3 th:text = "${reviewToDisplay.userReviewComment}"></h3>
+        <h3 th:text="'Texture: '+${reviewToDisplay.texture}"></h3>
+        <h3 th:text="'Milk Source: '+${reviewToDisplay.milkSource}"></h3>
+        <h3 th:text="'Geographic Location: '+${reviewToDisplay.geographicLocation}"></h3>
+        <h3 th:text="'Rating: '+${reviewToDisplay.userRating}+' out of 5'"></h3>
+        <h3 th:text="'Comments: '+${reviewToDisplay.userReviewComment}"></h3>
     </section>
-
-
 
     <div class="photo"></div>
 <!--    Photo option needs to be added to the database -->
@@ -36,7 +34,7 @@
 </section>
 
 
-<a href="index-template.html">Home</a>
+<a href="../">Home</a>
 <!--<a th:href="@{'/categories/' +${'cheesecategory.cheesetype'}}">Hard Cheeses</a>-->
 
 

@@ -11,10 +11,8 @@
     <section class="navigation-bar">
         <div class="left-side">
             <div class="navigation-bar-top">
-                <a href="../">Home</a>
-            </div>
-            <div class="navigation-bar-top">
                 <ul>
+                    <li><a href="../">Home</a></li>
                     <li th:each="cheesecategory: ${cheesecategories}">
                         <a th:text="${cheesecategory.cheeseType}"
                            th:href="@{'/categories/' + ${cheesecategory.cheeseType}}">Cheese Type
@@ -30,9 +28,6 @@
         <h1 class="header__title">reviews</h1>
         <nav class="header__nav">
             <ul class="header__nav-list">
-                <li class="header__nav-list-item">
-                    <a href="../" class="header__nav-link">Home</a>
-                </li>
                 <li class="header__nav-list-item">
                     <a href="" class="header__nav-link">#HashTags</a>
                 </li>
