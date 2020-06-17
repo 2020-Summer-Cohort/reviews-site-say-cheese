@@ -1,41 +1,37 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    dth<title>Document</title>
-    <link rel="stylesheet" href="index-layout&style.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="/index-layout&style.css" />
 </head>
 <body>
 <nav>
-<!--    <ul class = "list-cheese"th:each = "review:${cheesecategory.reviews}">-->
-<!--        <a class = "pic1" th:href = "@{'/reviews/' + ${review.getCheeseName()}}"-->
-<!--        <li><span th:text="${review.getCheeseName()}"></span></li></a>-->
     <section class="navigation-bar">
         <div class="left-side">
             <div class="navigation-bar-top">
-                <a href="./index.html">Home</a>
+                <a href="../">Home</a>
             </div>
             <div class="navigation-bar-top">
-
-<!--                <a th:href="@{'/cheesecategory/' + ${cheesecategory.GetCheeseType()}}"></a>-->
-<!--The above doesnt work for some reason, we might need travis again?-->
-            </div>
-            <div class="navigation-bar-top">
-                <a href="./category-hard.html">Hard Cheese</a>
+                <ul>
+                    <li th:each="cheesecategory: ${cheesecategories}">
+                        <a th:text="${cheesecategory.cheeseType}"
+                           th:href="@{'/categories/' + ${cheesecategory.cheeseType}}">Cheese Type
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
 </nav>
-
 <div class="container">
     <header class="header">
-        <h1 class="header__title"> reviews</h1>
+        <h1 class="header__title">reviews</h1>
         <nav class="header__nav">
             <ul class="header__nav-list">
                 <li class="header__nav-list-item">
-                    <a href="review-template.html" class="header__nav-link">Home</a>
+                    <a href="../" class="header__nav-link">Home</a>
                 </li>
                 <li class="header__nav-list-item">
                     <a href="" class="header__nav-link">#HashTags</a>
@@ -44,11 +40,6 @@
         </nav>
     </header>
     <main>
-<!--        <ul class="campuses__list">-->
-<!--            <li th:each="campus: ${campuses}" class="campuses__list-item">-->
-<!--                <a th:text="${campus.name}" th:href="@{/campuses/${campus.name}" class="campuses__link">Columbus</a>-->
-<!--            </li>-->
-<!--        </ul>-->
     </main>
 </div>
 </body>

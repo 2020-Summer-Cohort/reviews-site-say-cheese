@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class CheeseCategoryController {
 
     private CheeseCategoryStorage cheeseCategoryStorage;
-
     public CheeseCategoryController(CheeseCategoryStorage cheeseCategoryStorage) {
         this.cheeseCategoryStorage = cheeseCategoryStorage;
     }
@@ -22,9 +21,7 @@ public class CheeseCategoryController {
 
     @RequestMapping("categories")
     public String showAllCheeseTypes(Model model) {
-        model.addAttribute("cheesecategory", cheeseCategoryStorage.findAllCheeseCategories());
+        model.addAttribute("cheesecategories", cheeseCategoryStorage.findAllCheeseCategories());
         return "index-template";
     }
-
-
 }
