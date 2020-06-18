@@ -6,11 +6,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class CheeseCategoryStorage {
 
-    private Map<String, CheeseCategory> cheeseCategory = new HashMap<>();
+    private CheeseCategoryRepository cheeseCategoryRepo;
 
+    public CheeseCategoryStorage(CheeseCategoryRepository cheeseCategoryRepo) {
+        this.cheeseCategoryRepo = cheeseCategoryRepo;
+    }
 
+    public CheeseCategory findCheeseCategoryByType(String cheeseCategoryType) { return cheeseCategoryRepo.findByCheeseType(cheeseCategoryType); }
 
-    public CheeseCategory findCheeseCategoryByType(String cheeseCategoryType) { return cheeseCategory.get(cheeseCategoryType); }
-
-    public Collection<CheeseCategory> findAllCheeseCategories() { return cheeseCategory.values(); }
+    public Iterable<CheeseCategory> findAllCheeseCategories() { return cheeseCategoryRepo.findAll();}
 }

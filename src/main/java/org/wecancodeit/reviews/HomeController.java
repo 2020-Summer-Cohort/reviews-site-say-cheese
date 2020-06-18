@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 
     private final CheeseCategoryRepository cheeseCategoryRepo;
-    private final  HashTagRepository hashTagRepo;
+    private final HashTagRepository hashTagRepo;
 
     public HomeController(CheeseCategoryRepository cheeseCategoryRepo, HashTagRepository hashTagRepo) {
         this.cheeseCategoryRepo = cheeseCategoryRepo;

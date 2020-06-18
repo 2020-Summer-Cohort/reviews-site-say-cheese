@@ -2,10 +2,8 @@ package org.wecancodeit.reviews;
 
 import org.hibernate.annotations.MetaValue;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.Collection;
 import java.util.Objects;
 
 @Entity
@@ -21,6 +19,8 @@ public class Review {
     private String userReviewComment;
 @ManyToOne
 private CheeseCategory cheeseCategory;
+@ManyToMany
+private Collection<HashTag> hashTags;
 
 protected Review(){
 
