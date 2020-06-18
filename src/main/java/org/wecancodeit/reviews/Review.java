@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import java.util.Objects;
 
 @Entity
 public class Review {
@@ -21,6 +22,9 @@ public class Review {
 @ManyToOne
 private CheeseCategory cheeseCategory;
 
+protected Review(){
+
+}
     public Review(String cheeseName, String texture, String milkSource, String geographicLocation, int userRating, String userReviewComment, CheeseCategory cheeseCategory) {
         this.cheeseName = cheeseName;
         this.texture = texture;
@@ -57,5 +61,35 @@ private CheeseCategory cheeseCategory;
         return userReviewComment;
     }
 
+
+@Override
+public String toString(){
+    return "Review{" +
+           "id=" + id +
+            ", cheeseName='" + cheeseName + '\'' +
+            ", texture='" + texture + '\'' +
+            ", milkSource='" + milkSource + '\'' +
+            ", geograhicLocation='" + geographicLocation + '\'' +
+            ", userRating='" + userRating + '\'' +
+            ", userReviewComment='" + userReviewComment + '\'' +
+            ", cheeseCategory='" + cheeseCategory + '\'' +
+            '}';
+}
+@Override
+public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Review review = (Review) o;
+    return id == review.id &&
+            Objects.equals(cheeseName, review.cheeseName) &&
+            Objects.equals(texture, review.texture) &&
+            Objects.equals(milkSource, review.milkSource) &&
+            Objects.equals(geographicLocation, review.geographicLocation) &&
+            Objects.equals(userRating, review.userRating) &&
+            Objects.equals(userReviewComment, review.userReviewComment) &&
+            Objects.equals(cheeseCategory, review.cheeseCategory);
+}
+@Override
+public int hashCode(){ return Objects.hash(id, cheeseName, texture, milkSource, geographicLocation, userRating, userReviewComment, cheeseCategory);}
 
 }

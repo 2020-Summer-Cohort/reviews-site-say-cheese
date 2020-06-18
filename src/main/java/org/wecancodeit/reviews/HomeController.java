@@ -6,13 +6,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
-    private CheeseCategoryStorage cheeseCategoryStorage;
-    public HomeController(CheeseCategoryStorage cheeseCategoryStorage) {
-        this.cheeseCategoryStorage = cheeseCategoryStorage;
+
+    private final CheeseCategoryRepository cheeseCategoryRepo;
+    private final  HashTagRepository hashTagRepo;
+
+    public HomeController(CheeseCategoryRepository cheeseCategoryRepo, HashTagRepository hashTagRepo) {
+        this.cheeseCategoryRepo = cheeseCategoryRepo;
+        this.hashTagRepo = hashTagRepo;
     }
     @RequestMapping({"","/"})
     public String routeToCategories(Model model) {
-        model.addAttribute("cheesecategories", cheeseCategoryStorage.findAllCheeseCategories());
+        model.addAttribute("cheesecategories", cheeseCategoryRepo.findAll());
+        model.addAttribute("hashtag", hashTagRepo.findAll());
         return "index-template";
     }
+
 }
