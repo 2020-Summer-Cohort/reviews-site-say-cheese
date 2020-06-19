@@ -1,10 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/review-layout&style.css" type="text/css" />
 </head>
 <body>
+<h1 th:text="${reviewToDisplay.cheeseName}"></h1>
+
+<section class="cheese-review">
+    <section class="cheese-data">
+        <h3 th:text="'Texture: '+${reviewToDisplay.texture}"></h3>
+        <h3 th:text="'Milk Source: '+${reviewToDisplay.milkSource}"></h3>
+        <h3 th:text="'Geographic Location: '+${reviewToDisplay.geographicLocation}"></h3>
+        <h3 th:text="'Rating: '+${reviewToDisplay.userRating}+' out of 5'"></h3>
+        <h3 th:text="'Comments: '+${reviewToDisplay.userReviewComment}"></h3>
+    </section>
+
+    <div class="photo"></div>
+    <form action="hashtag/add" method="POST">
+        <label for="hashtag">
+            #Hashtag:
+        </label> 
+        <input type="text" name="hashTag" id="hashtag">
+        <button type="submit">Submit</button>
+    </form>
+<!--    Photo option needs to be added to the database -->
+</section>
+
+<section class="tag-section">
+    <div class="color-section"></div>
+
+    <hr />
+    <ul>
+        <li><a href="tag-PastaCheese.html">#PastaCheese</a></li>
+<!--        We gotta adjust the tags later on -->
+    </ul>
+</section>
+
+
+<a href="../">Home</a>
+<!--<a th:href="@{'/categories/' +${'cheesecategory.cheesetype'}}">Hard Cheeses</a>-->
+
+
 
 </body>
 </html>
