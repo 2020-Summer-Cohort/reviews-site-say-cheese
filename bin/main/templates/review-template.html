@@ -20,11 +20,13 @@
     </section>
 
     <div class="photo"></div>
-    <form action="hashtag/add" method="POST">
+    <form action="/hashTags/add" method="POST">
         <label for="hashtag">
             #Hashtag:
         </label> 
-        <input type="text" name="hashTag" id="hashtag">
+        <input type="text" onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122));"
+        onchange="if (this.value[0] !== '#') this.value = '#' + this.value;" name="hashTag" id="hashtag">
+        <input type="hidden" th:value="${reviewToDisplay.cheeseName}" name = "reviewName">
         <button type="submit">Submit</button>
     </form>
 <!--    Photo option needs to be added to the database -->
@@ -35,7 +37,7 @@
 
     <hr />
     <ul>
-        <li><a href="tag-PastaCheese.html">#PastaCheese</a></li>
+        <li th:each="HashTag: ${}"><a tag-PastaCheese.html">#PastaCheese</a></li>
 <!--        We gotta adjust the tags later on -->
     </ul>
 </section>

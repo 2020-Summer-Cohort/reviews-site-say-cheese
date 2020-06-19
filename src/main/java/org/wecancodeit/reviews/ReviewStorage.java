@@ -22,4 +22,8 @@ import java.util.Map;
     public Iterable<Review> findAllReviews(){
         return reviewRepo.findAll();
     }
-}
+
+        public void save(Review reviewToAddHashTag) {
+        reviewRepo.save(reviewToAddHashTag);
+        }
+    }

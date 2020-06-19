@@ -92,4 +92,7 @@ public boolean equals(Object o) {
 @Override
 public int hashCode(){ return Objects.hash(id, cheeseName, texture, milkSource, geographicLocation, userRating, userReviewComment, cheeseCategory);}
 
+    public void addHashTag(HashTag hashTagToAdd) {
+        hashTags.add(hashTagToAdd);
+    }
 }
