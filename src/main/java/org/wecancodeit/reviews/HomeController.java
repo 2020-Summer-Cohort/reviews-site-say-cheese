@@ -17,7 +17,7 @@ public class HomeController {
     @RequestMapping({"","/"})
     public String routeToCategories(Model model) {
         model.addAttribute("cheesecategories", cheeseCategoryRepo.findAll());
-        model.addAttribute("hashtag", hashTagRepo.findAll());
+        model.addAttribute("hashtags", hashTagRepo.findAll());
         return "index-template";
     }
 

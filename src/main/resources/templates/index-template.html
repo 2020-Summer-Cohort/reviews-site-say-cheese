@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/index-layout&style.css" />
 </head>
 <body>
+<h1>Cheesy Reviews</h1>
 <nav>
     <section class="navigation-bar">
         <div class="left-side">
@@ -24,16 +25,11 @@
     </section>
 </nav>
 <div class="container">
-    <header class="header">
-        <h1 class="header__title">reviews</h1>
-        <nav class="header__nav">
-            <ul class="header__nav-list">
-                <li class="header__nav-list-item">
-                    <a href="" class="header__nav-link">#HashTags</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+
+    <ul>
+        <li th:each="hashTag: ${hashtags}"><a th:href="@{'/hashtags/' + ${hashTag.hashTag}}" th:text ="${hashTag.hashTag}"></a></li>
+    </ul>
+
     <main>
     </main>
 </div>

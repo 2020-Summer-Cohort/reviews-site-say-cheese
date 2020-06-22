@@ -37,7 +37,7 @@
 
     <hr />
     <ul>
-        <li th:each="HashTag: ${}"><a tag-PastaCheese.html">#PastaCheese</a></li>
+        <li th:each="hashTag: ${reviewToDisplay.hashTags}"><a th:href="@{'/hashtags/' + ${hashTag.hashTag}}" th:text ="${hashTag.hashTag}"></a></li>
 <!--        We gotta adjust the tags later on -->
     </ul>
 </section>
