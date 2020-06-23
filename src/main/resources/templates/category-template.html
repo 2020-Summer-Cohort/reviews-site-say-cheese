@@ -16,6 +16,43 @@ xmlns:th="http://www.thymeleaf.org">
             </li>
         </a>
     </ul>
+    <form action="/reviews/add" method="POST">
+        <label>
+            NewCheese:
+        </label>
+        <input type="text" name="cheeseName" id=" ">
+        <label>
+            Texture:
+        </label>
+        <input type = "text" name = "texture" id = " ">
+        <label>
+            Milk Source:
+        </label>
+        <input type = "text" name = "milkSource" id = " ">
+        <label>
+            Geographic Location:
+        </label>
+        <input type ="text" name = "geographicLocation" id = " ">
+        <label>
+            Rating (? out of 5):
+        </label>
+        <input type = "text" name = "userRating" id = " ">
+        <label>
+            Comments:
+        </label>
+        <input type ="text" name = "userReviewComment" id = " ">
+        <label>
+            Tags:
+        </label>
+        <input type = "text" name = "hashTag" id =" ">
+        <input type = "hidden" name = "cheeseType" th:value="${cheesecategory.cheeseType}" id = "">
+        <button type="submit">Submit</button>
+    </form>
+    <ul>
+        <li th:each="review: ${cheesecategory.reviews}"><a th:href="@{'/reviews/' + ${review.cheeseName}}" th:text =" ${review.cheeseName}"></a></li>
+        <!--        We gotta adjust the tags later on -->
+    </ul>
+
 <a href="../">Home</a>
 </body>
 </html>
