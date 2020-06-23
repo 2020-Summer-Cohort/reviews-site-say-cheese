@@ -23,8 +23,8 @@ public class Populator implements CommandLineRunner {
         CheeseCategory softCheese = new CheeseCategory("Soft Cheese");
         cheeseCategoryRepo.save(hardCheese);
         cheeseCategoryRepo.save(softCheese);
-        HashTag hashTag1 = new HashTag("#PastaCheese");
-        HashTag hashTag2 = new HashTag("#WineCheese");
+        HashTag hashTag1 = new HashTag("PastaCheese");
+        HashTag hashTag2 = new HashTag("WineCheese");
         hashTagRepo.save(hashTag1);
         hashTagRepo.save(hashTag2);
 

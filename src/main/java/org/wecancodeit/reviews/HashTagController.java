@@ -16,10 +16,16 @@ public class HashTagController {
         this.reviewStorage = reviewStorage;
     }
 
-    @GetMapping("hashTags/{id}")
-    public String showSingleHashTag(@PathVariable Long id, Model model) {
-        model.addAttribute("hashTag", hashTagRepo.findById(id).get());
+    @GetMapping("hashTags/{hashTag}")
+    public String showSingleHashTag(@PathVariable String hashTag, Model model) {
+        model.addAttribute("hashTag", hashTagRepo.findByHashTag(hashTag));
         return "hashTag-template";
+    }
+
+    @GetMapping("hashTags/{hashTag}")
+    public String showAllCheeseNames (Model model) {
+        model.addAttribute("cheeseNames", cheeseCategoryReview.findAllCheeseCategories());
+        return "index-template";
     }
 
     @PostMapping("hashTags/add")

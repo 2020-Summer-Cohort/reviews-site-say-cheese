@@ -27,7 +27,7 @@
 <div class="container">
 
     <ul>
-        <li th:each="hashTag: ${hashtags}"><a th:href="@{'/hashtags/' + ${hashTag.hashTag}}" th:text ="${hashTag.hashTag}"></a></li>
+        <li th:each="hashTag: ${hashtags}"><a th:href="@{'/hashTags/' + ${hashTag.hashTag}}" th:text ="'#'+ ${hashTag.hashTag}"></a></li>
     </ul>
 
     <main>

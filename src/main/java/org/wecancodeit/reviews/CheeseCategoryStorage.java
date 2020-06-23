@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class CheeseCategoryStorage {
 
-    private CheeseCategoryRepository cheeseCategoryRepo;
+   private final CheeseCategoryRepository cheeseCategoryRepo;
 
     public CheeseCategoryStorage(CheeseCategoryRepository cheeseCategoryRepo) {
         this.cheeseCategoryRepo = cheeseCategoryRepo;
