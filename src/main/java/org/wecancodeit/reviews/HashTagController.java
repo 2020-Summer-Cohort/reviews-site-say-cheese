@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.Collection;
+
 @Controller
 public class HashTagController {
     private HashTagRepository hashTagRepo;
@@ -18,15 +20,10 @@ public class HashTagController {
 
     @GetMapping("hashTags/{hashTag}")
     public String showSingleHashTag(@PathVariable String hashTag, Model model) {
-        model.addAttribute("hashTag", hashTagRepo.findByHashTag(hashTag));
+        model.addAttribute("hashTagToDisplay", hashTagRepo.findByHashTag(hashTag));
         return "hashTag-template";
     }
 
-    @GetMapping("hashTags/{hashTag}")
-    public String showAllCheeseNames (Model model) {
-        model.addAttribute("cheeseNames", cheeseCategoryReview.findAllCheeseCategories());
-        return "index-template";
-    }
 
     @PostMapping("hashTags/add")
     public String addHashTag(String hashTag, String reviewName) {
