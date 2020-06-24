@@ -24,4 +24,8 @@ import java.util.Map;
         public void save(Review reviewToAddHashTag) {
         reviewRepo.save(reviewToAddHashTag);
         }
+
+        public void deleteReviewById(long reviewId) {
+        reviewRepo.deleteById(reviewId);
+        }
     }

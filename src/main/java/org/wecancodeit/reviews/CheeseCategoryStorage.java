@@ -12,7 +12,9 @@ public class CheeseCategoryStorage {
         this.cheeseCategoryRepo = cheeseCategoryRepo;
     }
 
-    public CheeseCategory findCheeseCategoryByType(String cheeseCategoryType) { return cheeseCategoryRepo.findByCheeseType(cheeseCategoryType); }
+    public CheeseCategory findCheeseCategoryByCheeseType(String cheeseCategoryType) { return cheeseCategoryRepo.findByCheeseType(cheeseCategoryType); }
 
     public Iterable<CheeseCategory> findAllCheeseCategories() { return cheeseCategoryRepo.findAll();}
+
+//    public void addCheeseCategory(CheeseCategory cheeseCategory){cheeseCategoryRepo.save(cheeseCategory);}
 }

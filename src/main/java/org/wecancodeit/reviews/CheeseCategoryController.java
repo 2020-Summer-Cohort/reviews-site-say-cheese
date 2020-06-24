@@ -15,7 +15,7 @@ public class CheeseCategoryController {
 
     @RequestMapping("categories/{cheeseCategory}")
     public String showSingleCheeseType(@PathVariable String cheeseCategory, Model model) {
-        model.addAttribute("cheesecategory", cheeseCategoryStorage.findCheeseCategoryByType((cheeseCategory)));
+        model.addAttribute("cheesecategory", cheeseCategoryStorage.findCheeseCategoryByCheeseType((cheeseCategory)));
         return "category-template";
     }
 

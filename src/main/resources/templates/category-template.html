@@ -45,13 +45,13 @@ xmlns:th="http://www.thymeleaf.org">
             Tags:
         </label>
         <input type = "text" name = "hashTag" id =" ">
-        <input type = "hidden" name = "cheeseType" th:value="${cheesecategory.cheeseType}" id = "">
+        <input type = "text" name = "cheeseType" th:value="${cheesecategory.cheeseType}" id = "">
         <button type="submit">Submit</button>
     </form>
-    <ul>
-        <li th:each="review: ${cheesecategory.reviews}"><a th:href="@{'/reviews/' + ${review.cheeseName}}" th:text =" ${review.cheeseName}"></a></li>
-        <!--        We gotta adjust the tags later on -->
-    </ul>
+<!--    <ul>-->
+<!--        <li th:each="review: ${cheesecategory.reviews}"><a th:href="@{'/reviews/' + ${review.cheeseName}}" th:text =" ${review.cheeseName}"></a></li>-->
+<!--        &lt;!&ndash;        We gotta adjust the tags later on &ndash;&gt;-->
+<!--    </ul>-->
 
 <a href="../">Home</a>
 </body>
