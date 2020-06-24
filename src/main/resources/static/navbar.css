@@ -1,0 +1,29 @@
+/* <nav>
+
+    <section class="navigation-bar">
+
+        <div class="left-side">
+
+            <div class="navigation-bar-top">
+
+                <ul>
+
+                    <li><a href="../">Home</a></li>
+
+                    <li th:each="cheesecategory: ${cheesecategories}">
+
+                        <a th:text="${cheesecategory.cheeseType}"
+
+                           th:href="@{'/categories/' + ${cheesecategory.cheeseType}}">Cheese Type</a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</nav> */

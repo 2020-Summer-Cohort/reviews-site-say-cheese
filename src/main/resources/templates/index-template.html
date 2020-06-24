@@ -1,37 +1,114 @@
+
+
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head>
+
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Document</title>
+
     <link rel="stylesheet" href="/index-layout&style.css" />
+
+    <link rel="stylesheet" href="/tag.css" />
+
+    <link rel="stylesheet" href="/navbar.css" />
+
 </head>
+
 <body>
-<h1>Cheesy Reviews</h1>
+
 <nav>
+
     <section class="navigation-bar">
+
         <div class="left-side">
+
             <div class="navigation-bar-top">
+
                 <ul>
+
                     <li><a href="../">Home</a></li>
+
                     <li th:each="cheesecategory: ${cheesecategories}">
+
                         <a th:text="${cheesecategory.cheeseType}"
-                           th:href="@{'/categories/' + ${cheesecategory.cheeseType}}">Cheese Type
-                        </a>
+
+                           th:href="@{'/categories/' + ${cheesecategory.cheeseType}}">Cheese Type</a>
+
                     </li>
+
                 </ul>
+
             </div>
+
         </div>
+
     </section>
+
 </nav>
+
 <div class="container">
 
+    <h1>Cheesy Reviews</h1>
+
+    <h4>Reviews all about cheese.</h4>
+
+    <section class="CheeseSection">
+
+        <ul class="cheese-list">
+
+            <li th:each="cheesecategory: ${cheesecategories}">
+
+                <a class="no-underline"
+
+                   th:href="@{'/categories/' + ${cheesecategory.cheeseType}}">
+
+                    <div class="cheese-type">
+
+                        <div></div>
+
+                        <span th:text="${cheesecategory.cheeseType}">Cheese Type</span>
+
+                    </div>
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </section>
+
+</div>
+
+<section class="tag-section">
+
+    <div class="color-section"></div>
+
+    <h2>Search by hashtag below!</h2>
+
+    <hr />
+
     <ul>
+
         <li th:each="hashTag: ${hashtags}"><a th:href="@{'/hashTags/' + ${hashTag.hashTag}}" th:text ="'#'+ ${hashTag.hashTag}"></a></li>
+
     </ul>
 
-    <main>
-    </main>
+</section>
+
+<main>
+
+</main>
+
 </div>
+
 </body>
+
 </html>
+

@@ -1,46 +1,87 @@
 .tag-section {
+
   background-color: #52aa5e;
-  margin: 0 50px;
+
+  margin: 0 auto;
+
+  width: 95%;
+
   border-radius: 15px;
+
   position: relative;
+
   color: white;
+
+  margin-top: 10px;
+
+  margin-bottom: 1%;
+
 }
 
 .tag-section hr {
-  width: 90%;
+
+  width: 95%;
+
 }
 
 .tag-section h2 {
-  margin: 0 50px;
+
+  margin: 0 auto;
+
+  width: 95%;
+
   margin-top: 10px;
+
   height: 60px;
+
   line-height: 60px;
+
   z-index: 100;
+
   position: relative;
+
   text-align: center;
+
 }
 
 .tag-section ul {
+
   display: flex;
+
   flex-direction: row;
+
   list-style-type: none;
+
   margin: 0 50px;
+
   justify-content: center;
+
   z-index: 100;
+
   position: relative;
+
 }
 
 .tag-section ul li {
+
   margin: 20px;
-  
+
+
+
 }
 
 ul{
+
   list-style-type: none;
+
 }
 
 .tag-section a {
+
   color: white;
+
   text-decoration: none;
+
   font-size: 16pt;
+
 }
