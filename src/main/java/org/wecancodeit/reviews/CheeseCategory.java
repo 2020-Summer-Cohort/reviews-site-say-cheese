@@ -11,7 +11,7 @@ import java.util.Objects;
 public class CheeseCategory {
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
     private String cheeseType;
     @OneToMany(mappedBy = "cheeseCategory")
     private Collection<Review> reviews;
@@ -23,7 +23,7 @@ public class CheeseCategory {
         this.cheeseType = cheeseType;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

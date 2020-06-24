@@ -10,7 +10,7 @@ public class HashTagStorage {
     private HashTagRepository hashTagRepo;
 
     public HashTagStorage (HashTagRepository hashTagRepo){this.hashTagRepo = hashTagRepo;}
-    public HashTag findHashtagById(long id) {
+    public HashTag findHashtagById(Long id) {
         Optional<HashTag> hashTagOptional = hashTagRepo.findById(id);
         HashTag retrievedHashTag;
         if(hashTagOptional.isEmpty()) {

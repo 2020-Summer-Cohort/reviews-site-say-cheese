@@ -17,9 +17,10 @@ public class ReviewController {
     CheeseCategoryStorage cheeseCategoryStorage;
     HashTagStorage hashTagStorage;
 
-    public ReviewController(ReviewStorage reviewStorage) {
+    public ReviewController(ReviewStorage reviewStorage,   CheeseCategoryStorage cheeseCategoryStorage, HashTagStorage hashTagStorage) {
         this.reviewStorage = reviewStorage;
-
+        this.cheeseCategoryStorage = cheeseCategoryStorage;
+        this.hashTagStorage = hashTagStorage;
     }
 
     @RequestMapping("reviews/{cheeseName}")
@@ -28,19 +29,15 @@ public class ReviewController {
         return "review-template";
     }
     @PostMapping("reviews/add")
-    public String addReview(String cheeseName, String texture, String milkSource, String geographicLocation, int userRating, String userReviewComment, String cheeseType, long... hashtagIds) {
-        CheeseCategory reviewCheeseCategory = cheeseCategoryStorage.findCheeseCategoryByCheeseType(cheeseType);
-        Collection<HashTag> reviewHashtags = Arrays.stream(hashtagIds)
-                .mapToObj(id->hashTagStorage.findHashtagById(id))
-                .collect(Collectors.toSet());
-        reviewStorage.save(new Review(cheeseName, texture, milkSource, geographicLocation, userRating, userReviewComment, reviewCheeseCategory, reviewHashtags.toArray(HashTag[]::new)));
-        return "redirect:/categories/"+ cheeseType;
+    public String addReview(String cheeseName, String texture, String milkSource, String geographicLocation,
+                            Integer userRating, String userReviewComment,  long cheeseCategoryId) {
+        CheeseCategory reviewCheeseCategory = cheeseCategoryStorage.findCheeseCategoryById(cheeseCategoryId);
+
+        reviewStorage.save(new Review(cheeseName, texture, milkSource, geographicLocation, userRating, userReviewComment,
+                reviewCheeseCategory));
+        return "redirect:/categories/"+ reviewCheeseCategory.getCheeseType();
 }
-//    @PostMapping("reviews/delete")
-//    public String deleteReview(long reviewId){
-//        reviewStorage.deleteReviewById(reviewId);
-//        return "redirect:/";
-//    }
+
 }
 
 

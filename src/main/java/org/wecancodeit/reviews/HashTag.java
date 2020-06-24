@@ -11,7 +11,7 @@ import java.util.Objects;
 public class HashTag {
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
     private String hashTag;
     @ManyToMany(mappedBy = "hashTags")
     private Collection<Review> reviews;
@@ -22,7 +22,7 @@ public class HashTag {
         this.hashTag = hashTag;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

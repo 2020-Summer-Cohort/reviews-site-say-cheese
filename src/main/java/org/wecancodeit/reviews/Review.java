@@ -13,7 +13,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 public class Review {
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
     private String cheeseName;
     private String texture;
     private String milkSource;
@@ -68,7 +68,7 @@ public class Review {
         return userReviewComment;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
