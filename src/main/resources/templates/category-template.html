@@ -6,6 +6,7 @@ xmlns:th="http://www.thymeleaf.org">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="/category-hard-layout&style.css" type="text/css" />
+    <link rel="stylesheet" href="/navbar.css" />
 </head>
 <body>
     <h1 th:text="${cheesecategory.cheeseType}"></h1>
@@ -41,11 +42,7 @@ xmlns:th="http://www.thymeleaf.org">
             Comments:
         </label>
         <input type ="text" name = "userReviewComment" id = " ">
-        <label>
-            Tags:
-        </label>
-        <input type = "text" name = "hashTag" id =" ">
-        <input type = "text" name = "cheeseCategoryId" th:value="${cheesecategory.id}" id = "">
+        <input type = "hidden" name = "cheeseCategoryId" th:value="${cheesecategory.id}" id = "">
         <button type="submit">Submit</button>
     </form>
 <!--    <ul>-->
