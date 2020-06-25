@@ -26,6 +26,7 @@ public class ReviewController {
     @RequestMapping("reviews/{cheeseName}")
     public String showSingleReview(@PathVariable String cheeseName, Model model) {
         model.addAttribute("reviewToDisplay", reviewStorage.findReviewByCheeseName(cheeseName));
+        model.addAttribute("cheesecategories", cheeseCategoryStorage.findAllCheeseCategories());
         return "review-template";
     }
     @PostMapping("reviews/add")

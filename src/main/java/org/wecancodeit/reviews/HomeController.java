@@ -14,6 +14,7 @@ public class HomeController {
         this.cheeseCategoryRepo = cheeseCategoryRepo;
         this.hashTagRepo = hashTagRepo;
     }
+
     @RequestMapping({"","/"})
     public String routeToCategories(Model model) {
         model.addAttribute("cheesecategories", cheeseCategoryRepo.findAll());

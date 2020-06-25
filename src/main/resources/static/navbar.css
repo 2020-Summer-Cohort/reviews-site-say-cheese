@@ -1,3 +1,8 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
 ul{
     list-style: none;
 }
@@ -28,33 +33,3 @@ ul{
 .navigation-bar-top li:hover{
     text-shadow: 0 0 10px #9cdfa5, 0 0 10px #9cdfa5, 0 0 10px #9cdfa5;
 }
-
-/* <nav>
-
-    <section class="navigation-bar">
-
-        <div class="left-side">
-
-            <div class="navigation-bar-top">
-
-                <ul>
-
-                    <li><a href="../">Home</a></li>
-
-                    <li th:each="cheesecategory: ${cheesecategories}">
-
-                        <a th:text="${cheesecategory.cheeseType}"
-
-                           th:href="@{'/categories/' + ${cheesecategory.cheeseType}}">Cheese Type</a>
-
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </div>
-
-    </section>
-
-</nav> */

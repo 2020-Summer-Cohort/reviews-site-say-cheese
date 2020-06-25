@@ -7,6 +7,21 @@
     <title>Hashtags</title>
 </head>
 <body>
+    <nav>
+        <section class="navigation-bar">
+            <div class="left-side">
+                <div class="navigation-bar-top">
+                    <ul>
+                        <li><a href="../">Home</a></li>
+                        <li th:each="cheesecategory: ${cheesecategories}">
+                            <a th:text="${cheesecategory.cheeseType}"
+                               th:href="@{'/categories/' + ${cheesecategory.cheeseType}}">Cheese Type</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </nav>
     <h1 th:text= "${hashTagToDisplay.hashTag}">Hashtag Name</h1>
     <h2 th:each= "review: ${hashTagToDisplay.reviews} " >
         <a th:href= "'/reviews/' + ${review.cheeseName}" th:text = "${review.cheeseName}"></a>

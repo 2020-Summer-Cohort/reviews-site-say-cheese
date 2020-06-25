@@ -33,19 +33,19 @@ public class Populator implements CommandLineRunner {
                 "or eaten on its own as a snack.", hardCheese, hashTag1);
         Review review2 = new Review("Romano", "Hard & Salty", "Sheep", "Tuscany, Italy",
                 4,"Sharp and tangy flavor. This is one of Italy's oldest cheese and makes an excellent table cheese.", hardCheese, hashTag1,hashTag2);
+        Review review5 = new Review("Asiago", "Hard & Crumbly", "Cow", "Veneto, Italy",
+                4, "Strong unique flavor. Great with pasta and bagels.", hardCheese, hashTag1);
         Review review3 = new Review("Brie", "Soft & Creamy", "Cow", "Province of Brie, France",
                 3, "This cheese has a bit of tang. It is excellent paired with wine and grapes.",softCheese,hashTag2);
         Review review4 = new Review("Mozzarella", "Soft & Creamy", "Water Buffalo", "Naples, Italy",
                 3,"This soft cheese comes in small balls and is great on pizza!", softCheese,hashTag1, hashTag2);
+        Review review6 = new Review("Ricotta", "Soft & Creamy", "Sheep | Cow | Goat | Water Buffalo", "Italy",
+                3, "Soft and creamy cheese. Great as an appetizer or added to a lasagna.", softCheese, hashTag1);
         reviewRepo.save(review1);
         reviewRepo.save(review2);
+        reviewRepo.save(review5);
         reviewRepo.save(review3);
         reviewRepo.save(review4);
-
-
+        reviewRepo.save(review6);
     }
-
-
-
-
 }
