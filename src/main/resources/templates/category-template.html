@@ -19,6 +19,7 @@ xmlns:th="http://www.thymeleaf.org">
                             <a th:text="${cheesecategory.cheeseType}"
                                th:href="@{'/categories/' + ${cheesecategory.cheeseType}}">Cheese Type</a>
                         </li>
+                        <div class="nav-title">Cheesy Reviews</div>
                     </ul>
                 </div>
             </div>
@@ -31,7 +32,8 @@ xmlns:th="http://www.thymeleaf.org">
             <li>
                 <span th:text="${reviewToDisplay.cheeseName}"></span>
                 <div class="cheese-pic"></div>
-                <img th:src="@{'/images/' + ${reviewToDisplay.cheeseName} + '.jpg'}"/>
+                <img th:src="@{'/images/' + ${reviewToDisplay.cheeseName} + '.jpg'}"
+                onerror="this.onerror=null;this.src='/images/defaultcheeseimg.png';"/>
             </li>
         </a>
     </ul>
@@ -39,46 +41,42 @@ xmlns:th="http://www.thymeleaf.org">
     <form class="form-new-cheese" action="/reviews/add" method="POST">
         <div class="inputdiv">
         <label>
-            NewCheese:
+            New Cheese: 
         </label>
-        <input type="text" name="cheeseName" id=" " required>
+        <input type="text" name="cheeseName" id=" " autocomplete="off" required>
         </div>
         <div class="inputdiv">
         <label>
             Texture:
         </label>
-        <input type = "text" name = "texture" id = " " required>
+        <input type = "text" name = "texture" id = " " autocomplete="off" required>
         </div>
         <div class="inputdiv">
         <label>
             Milk Source:
         </label>
-        <input type = "text" name = "milkSource" id = " " required>
+        <input type = "text" name = "milkSource" id = " " autocomplete="off" required>
         </div>
         <div class="inputdiv">
         <label>
             Geographic Location:
         </label>
-        <input type ="text" name = "geographicLocation" id = " " required>
+        <input type ="text" name = "geographicLocation" id = " " autocomplete="off" required>
         </div>
         <div class="inputdiv">
         <label>
             Rating (? out of 5):
         </label>
-        <input type = "text" name = "userRating" id = " " required>
+        <input type = "text" name = "userRating" id = " " autocomplete="off" required>
         </div>
         <div class="inputdiv">
         <label>
             Comments:
         </label>
-        <textarea type ="text" name = "userReviewComment" cols="34" rows="4" id = " " required></textarea>
+        <textarea type ="text" name = "userReviewComment" cols="34" rows="4" id = " " autocomplete="off" required></textarea>
         </div>
         <input type = "hidden" name = "cheeseCategoryId" th:value="${cheesecategory.id}" id = "">
         <button class="submit" type="submit">Submit</button>
     </form>
-<!--    <ul>-->
-<!--        <li th:each="review: ${cheesecategory.reviews}"><a th:href="@{'/reviews/' + ${review.cheeseName}}" th:text =" ${review.cheeseName}"></a></li>-->
-<!--        &lt;!&ndash;        We gotta adjust the tags later on &ndash;&gt;-->
-<!--    </ul>-->
 </body>
 </html>

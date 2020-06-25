@@ -33,3 +33,17 @@ ul{
 .navigation-bar-top li:hover{
     text-shadow: 0 0 10px #9cdfa5, 0 0 10px #9cdfa5, 0 0 10px #9cdfa5;
 }
+
+.navigation-bar{
+    position: relative;
+}
+
+.nav-title{
+    position: absolute;
+    line-height: 50px;
+    font-size: 18pt;
+    right: 25px;
+    color: white;
+    z-index: 100;
+    pointer-events: none;
+}

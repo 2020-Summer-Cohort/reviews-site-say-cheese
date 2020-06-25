@@ -20,6 +20,7 @@
                             <a th:text="${cheesecategory.cheeseType}"
                                th:href="@{'/categories/' + ${cheesecategory.cheeseType}}">Cheese Type</a>
                         </li>
+                        <div class="nav-title">Cheesy Reviews</div>
                     </ul>
                 </div>
             </div>
@@ -28,15 +29,16 @@
 <h1 th:text="${reviewToDisplay.cheeseName}"></h1>
 <section class="cheese-review">
     <section class="cheese-data">
-        <h3 th:text="'Texture: '+${reviewToDisplay.texture}"></h3>
-        <h3 th:text="'Milk Source: '+${reviewToDisplay.milkSource}"></h3>
-        <h3 th:text="'Geographic Location: '+${reviewToDisplay.geographicLocation}"></h3>
-        <h3 th:text="'Rating: '+${reviewToDisplay.userRating}+' out of 5'"></h3>
-        <h3 th:text="'Comments: '+${reviewToDisplay.userReviewComment}"></h3>
+        <h3 th:text="${reviewToDisplay.texture}"></h3>
+        <h3 th:text="${reviewToDisplay.milkSource}"></h3>
+        <h3 th:text="${reviewToDisplay.geographicLocation}"></h3>
+        <h3 th:text="${reviewToDisplay.userRating}+' out of 5'"></h3>
+        <h3 th:text="${reviewToDisplay.userReviewComment}"></h3>
     </section>
     <div class="photo">
         <img th:src="@{'/images/' + ${reviewToDisplay.cheeseName} + '.jpg'}"/>
     </div>
+    <h4>Add New Hashtags Below</h4>
     <form action="/hashTags/add" method="POST">
         <label for="hashtag">
             #Hashtag:
