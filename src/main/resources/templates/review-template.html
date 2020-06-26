@@ -37,7 +37,8 @@
         <h3 th:text="${reviewToDisplay.userReviewComment}"></h3>
     </section>
     <div class="photo">
-        <img th:src="@{'/images/' + ${reviewToDisplay.cheeseName} + '.jpg'}"/>
+        <img th:src="@{'/images/' + ${reviewToDisplay.cheeseName} + '.jpg'}"
+        onerror="this.onerror=null;this.src='/images/defaultcheeseimg.png';" />
     </div>
     <h4>Add New Hashtags Below</h4>
     <form action="/hashTags/add" method="POST">

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hashtags</title>
+</head>
+<body>
+    <h1 th:text= "${hashTagToDisplay.hashTag}">Hashtag Name</h1>
+    <h2 th:each= "review: ${hashTagToDisplay.reviews} " >
+        <a th:href= "'/reviews/' + ${review.cheeseName}" th:text = "${review.cheeseName}"></a>
+    </h2>
+</body>
+</html>

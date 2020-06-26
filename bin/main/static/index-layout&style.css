@@ -1,92 +1,170 @@
+
+
 * {
+
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    margin: 0;
+
+    padding: 0;
+
 }
 
-body { 
+ul{
+
+    list-style-type: none;
+
 }
 
 h1 {
+
     text-align: center;
+
     width:100%;
+
 }
 
-h6 {
+h4 {
+
     text-align: center;
-}
 
-.container {
-    display: grid;
-    grid-auto-rows: auto;
-}
-    
-.CheeseSection {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-gap: 2px;
-    margin: 0 50px;
-}
-
-.soft-cheese {
-    background-image: url("./images/Mozzarella\ Cheese.jfif");
-    height: 500px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    border-radius: 15px;
-   
-}
-
-.hard-cheese {
-    background-image: url("./images/Parmesan\ Cheese.jfif");
-    height: 500px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    border-radius: 15px;
-}
-
-.soft-cheese span, .hard-cheese span {
-    color: white;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    font-size: 30pt;
     margin-top: 10px;
-    text-decoration: none;
-    font-weight: bolder;
-    text-shadow: 0 0 15px black;
-    z-index: 100;
+
+}
+
+.cheese-list{
+
+    display:flex;
+
+    flex-direction: row;
+
+    justify-content: center;
+
+    margin-top: 20px;
+
+}
+
+.cheese-list li{
+
+    width: 46.25%;
+
+}
+
+.cheese-list li:first-child{
+
+    margin-right: 2.5%;
+
+}
+
+.cheese-list li:first-child .cheese-type {
+
+    background-image: url("./images/Mozzarella\ Cheese.jfif");
+
+    height: 500px;
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
     position: relative;
+
+    border-radius: 15px;
+
+
+
+}
+
+.cheese-list li:last-child .cheese-type {
+
+    background-image: url("./images/Parmesan\ Cheese.jfif");
+
+    height: 500px;
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+    position: relative;
+
+    border-radius: 15px;
+
+}
+
+.cheese-type span {
+
+    color: white;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    font-size: 30pt;
+
+    margin-top: 10px;
+
+    text-decoration: none;
+
+    font-weight: bolder;
+
+    text-shadow: 0 0 15px black;
+
+    z-index: 100;
+
+    position: relative;
+
 }
 
 .no-underline {
+
     text-decoration: none;
+
 }
 
-.soft-cheese div, .hard-cheese div {
+.cheese-type div {
+
     position: absolute;
+
     height: 100%;
+
     width: 100%;
+
     opacity: 30%;
+
     border-radius: 15px;
+
 }
 
-.soft-cheese div {
+.cheese-list li:first-child .cheese-type div {
+
     background-color: rgb(250, 182, 56);
+
 }
 
-.hard-cheese div {
+.cheese-list li:last-child .cheese-type div {
+
     background-color: orange;
+
 }
 
 .color-section {
+
     position: absolute;
+
     top: 0;
+
     left: 0;
+
     height: 100%;
+
     width: 100%;
+
     background-color:rgb(250, 182, 56);
+
     opacity: 30%;
+
     border-radius: 15px;
-    
+
 }
+
