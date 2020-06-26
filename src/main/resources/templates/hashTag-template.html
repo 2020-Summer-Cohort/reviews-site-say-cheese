@@ -28,7 +28,7 @@
     <h1 th:text= "${hashTagToDisplay.hashTag}">Hashtag Name</h1>
     <ul class="list-cheeses" >
         <a class="pic" th:each="review: ${hashTagToDisplay.reviews}" 
-                       th:href="@{''/reviews/' + ${review.cheeseName}}">
+                       th:href="@{'/reviews/' + ${review.cheeseName}}">
             <li>
                 <span th:text="${review.cheeseName}"></span>
                 <div class="cheese-pic"></div>
