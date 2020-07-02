@@ -3,12 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/navbar.css" />
+    <link rel="stylesheet" href="/hashtag.css" />
+    <link rel="icon" type="image/png" href="/images/favicon.png">
     <title>Hashtags</title>
 </head>
 <body>
+    <nav>
+        <section class="navigation-bar">
+            <div class="left-side">
+                <div class="navigation-bar-top">
+                    <ul>
+                        <li><a href="../">Home</a></li>
+                        <li th:each="cheesecategory: ${cheesecategories}">
+                            <a th:text="${cheesecategory.cheeseType}"
+                               th:href="@{'/categories/' + ${cheesecategory.cheeseType}}">Cheese Type</a>
+                        </li>
+                        <div class="nav-title">Cheesy Reviews</div>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </nav>
     <h1 th:text= "${hashTagToDisplay.hashTag}">Hashtag Name</h1>
-    <h2 th:each= "review: ${hashTagToDisplay.reviews} " >
-        <a th:href= "'/reviews/' + ${review.cheeseName}" th:text = "${review.cheeseName}"></a>
-    </h2>
+    <ul class="list-cheeses" >
+        <a class="pic" th:each="review: ${hashTagToDisplay.reviews}" 
+                       th:href="@{'/reviews/' + ${review.cheeseName}}">
+            <li>
+                <span th:text="${review.cheeseName}"></span>
+                <div class="cheese-pic"></div>
+                <img th:src="@{'/images/' + ${review.cheeseName} + '.jpg'}"/>
+            </li>
+        </a>
+    </ul>
 </body>
 </html>

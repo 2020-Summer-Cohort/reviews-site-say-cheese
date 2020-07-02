@@ -4,55 +4,80 @@ xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title th:text="${cheesecategory.cheeseType}"></title>
     <link rel="stylesheet" href="/category-hard-layout&style.css" type="text/css" />
+    <link rel="stylesheet" href="/navbar.css" />
+    <link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
 <body>
+    <nav>
+        <section class="navigation-bar">
+            <div class="left-side">
+                <div class="navigation-bar-top">
+                    <ul>
+                        <li><a href="../">Home</a></li>
+                        <li th:each="cheesecategory: ${cheesecategories}">
+                            <a th:text="${cheesecategory.cheeseType}"
+                               th:href="@{'/categories/' + ${cheesecategory.cheeseType}}">Cheese Type</a>
+                        </li>
+                        <div class="nav-title">Cheesy Reviews</div>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </nav>
     <h1 th:text="${cheesecategory.cheeseType}"></h1>
-    <ul class="list-cheese" th:each="reviewToDisplay: ${cheesecategory.reviews}">
-        <a class="pic1" th:href="@{'/reviews/' + ${reviewToDisplay.cheeseName}}">
+    <ul class="list-cheeses" >
+        <a class="pic" th:each="reviewToDisplay: ${cheesecategory.reviews}" 
+                       th:href="@{'/reviews/' + ${reviewToDisplay.cheeseName}}">
             <li>
                 <span th:text="${reviewToDisplay.cheeseName}"></span>
+                <div class="cheese-pic"></div>
+                <img th:src="@{'/images/' + ${reviewToDisplay.cheeseName} + '.jpg'}"
+                onerror="this.onerror=null;this.src='/images/defaultcheeseimg.png';"/>
             </li>
         </a>
     </ul>
-    <form action="/reviews/add" method="POST">
+    <h3>Add A New Cheesy Review</h3>
+    <form class="form-new-cheese" action="/reviews/add" method="POST">
+        <div class="inputdiv">
         <label>
-            NewCheese:
+            New Cheese: 
         </label>
-        <input type="text" name="cheeseName" id=" ">
+        <input type="text" name="cheeseName" id=" " autocomplete="off" required>
+        </div>
+        <div class="inputdiv">
         <label>
             Texture:
         </label>
-        <input type = "text" name = "texture" id = " ">
+        <input type = "text" name = "texture" id = " " autocomplete="off" required>
+        </div>
+        <div class="inputdiv">
         <label>
             Milk Source:
         </label>
-        <input type = "text" name = "milkSource" id = " ">
+        <input type = "text" name = "milkSource" id = " " autocomplete="off" required>
+        </div>
+        <div class="inputdiv">
         <label>
             Geographic Location:
         </label>
-        <input type ="text" name = "geographicLocation" id = " ">
+        <input type ="text" name = "geographicLocation" id = " " autocomplete="off" required>
+        </div>
+        <div class="inputdiv">
         <label>
             Rating (? out of 5):
         </label>
-        <input type = "text" name = "userRating" id = " ">
+        <input type = "text" name = "userRating" id = " " autocomplete="off" required>
+        </div>
+        <div class="inputdiv">
         <label>
             Comments:
         </label>
-        <input type ="text" name = "userReviewComment" id = " ">
-        <label>
-            Tags:
-        </label>
-        <input type = "text" name = "hashTag" id =" ">
-        <input type = "text" name = "cheeseCategoryId" th:value="${cheesecategory.id}" id = "">
-        <button type="submit">Submit</button>
+        <textarea type ="text" name = "userReviewComment" cols="34" rows="4" id = " " autocomplete="off" required></textarea>
+        </div>
+        <input type = "hidden" name = "cheeseCategoryId" th:value="${cheesecategory.id}" id = "">
+        <button class="submit" type="submit">Submit</button>
     </form>
-<!--    <ul>-->
-<!--        <li th:each="review: ${cheesecategory.reviews}"><a th:href="@{'/reviews/' + ${review.cheeseName}}" th:text =" ${review.cheeseName}"></a></li>-->
-<!--        &lt;!&ndash;        We gotta adjust the tags later on &ndash;&gt;-->
-<!--    </ul>-->
-
-<a href="../">Home</a>
 </body>
 </html>

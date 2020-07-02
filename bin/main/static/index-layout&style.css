@@ -1,170 +1,134 @@
-
-
 * {
-
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
-    margin: 0;
-
-    padding: 0;
-
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-ul{
-
-    list-style-type: none;
-
+ul {
+  list-style-type: none;
 }
 
 h1 {
+  text-align: center;
 
-    text-align: center;
-
-    width:100%;
-
+  width: 100%;
 }
 
 h4 {
+  text-align: center;
 
-    text-align: center;
-
-    margin-top: 10px;
-
+  margin-top: 10px;
 }
 
-.cheese-list{
+.cheese-list {
+  display: flex;
 
-    display:flex;
+  flex-direction: row;
 
-    flex-direction: row;
+  justify-content: center;
 
-    justify-content: center;
-
-    margin-top: 20px;
-
+  margin-top: 20px;
 }
 
-.cheese-list li{
-
-    width: 46.25%;
-
+.cheese-list li {
+  width: 46.25%;
 }
 
-.cheese-list li:first-child{
-
-    margin-right: 2.5%;
-
+.cheese-list li:first-child {
+  margin-right: 2.5%;
 }
 
 .cheese-list li:first-child .cheese-type {
+  background-image: url("./images/Mozzarella\ Cheese.jfif");
 
-    background-image: url("./images/Mozzarella\ Cheese.jfif");
+  height: 500px;
 
-    height: 500px;
+  background-repeat: no-repeat;
 
-    background-repeat: no-repeat;
+  background-size: cover;
 
-    background-size: cover;
+  position: relative;
 
-    position: relative;
-
-    border-radius: 15px;
-
-
-
+  border-radius: 15px;
 }
 
 .cheese-list li:last-child .cheese-type {
+  background-image: url("./images/Parmesan\ Cheese.jfif");
 
-    background-image: url("./images/Parmesan\ Cheese.jfif");
+  height: 500px;
 
-    height: 500px;
+  background-repeat: no-repeat;
 
-    background-repeat: no-repeat;
+  background-size: cover;
 
-    background-size: cover;
+  position: relative;
 
-    position: relative;
-
-    border-radius: 15px;
-
+  border-radius: 15px;
 }
 
 .cheese-type span {
+  color: white;
 
-    color: white;
+  width: 100%;
 
-    width: 100%;
+  display: flex;
 
-    display: flex;
+  justify-content: center;
 
-    justify-content: center;
+  font-size: 30pt;
 
-    font-size: 30pt;
+  margin-top: 10px;
 
-    margin-top: 10px;
+  text-decoration: none;
 
-    text-decoration: none;
+  font-weight: bolder;
 
-    font-weight: bolder;
+  text-shadow: 0 0 15px black;
 
-    text-shadow: 0 0 15px black;
+  z-index: 100;
 
-    z-index: 100;
-
-    position: relative;
-
+  position: relative;
 }
 
 .no-underline {
-
-    text-decoration: none;
-
+  text-decoration: none;
 }
 
 .cheese-type div {
+  position: absolute;
 
-    position: absolute;
+  height: 100%;
 
-    height: 100%;
+  width: 100%;
 
-    width: 100%;
+  opacity: 30%;
 
-    opacity: 30%;
-
-    border-radius: 15px;
-
+  border-radius: 15px;
 }
 
 .cheese-list li:first-child .cheese-type div {
-
-    background-color: rgb(250, 182, 56);
-
+  background-color: rgb(250, 182, 56);
 }
 
 .cheese-list li:last-child .cheese-type div {
-
-    background-color: orange;
-
+  background-color: orange;
 }
 
 .color-section {
+  position: absolute;
 
-    position: absolute;
+  top: 0;
 
-    top: 0;
+  left: 0;
 
-    left: 0;
+  height: 100%;
 
-    height: 100%;
+  width: 100%;
 
-    width: 100%;
+  background-color: rgb(250, 182, 56);
 
-    background-color:rgb(250, 182, 56);
+  opacity: 30%;
 
-    opacity: 30%;
-
-    border-radius: 15px;
-
+  border-radius: 15px;
 }
-

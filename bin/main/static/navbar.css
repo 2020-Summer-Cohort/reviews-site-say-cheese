@@ -1,29 +1,49 @@
-/* <nav>
+*{
+    padding: 0;
+    margin: 0;
+}
 
-    <section class="navigation-bar">
+ul{
+    list-style: none;
+}
 
-        <div class="left-side">
+.navigation-bar-top ul{
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #52aa5e;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
-            <div class="navigation-bar-top">
+.navigation-bar-top li {
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+}
 
-                <ul>
+.navigation-bar-top *{
+    color: white;
+    text-decoration: none;
+    font-size: 14pt;
+}
 
-                    <li><a href="../">Home</a></li>
+.navigation-bar-top li:hover{
+    text-shadow: 0 0 10px #9cdfa5, 0 0 10px #9cdfa5, 0 0 10px #9cdfa5;
+}
 
-                    <li th:each="cheesecategory: ${cheesecategories}">
+.navigation-bar{
+    position: relative;
+}
 
-                        <a th:text="${cheesecategory.cheeseType}"
-
-                           th:href="@{'/categories/' + ${cheesecategory.cheeseType}}">Cheese Type</a>
-
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </div>
-
-    </section>
-
-</nav> */
+.nav-title{
+    position: absolute;
+    line-height: 50px;
+    font-size: 18pt;
+    right: 25px;
+    color: white;
+    z-index: 100;
+    pointer-events: none;
+}

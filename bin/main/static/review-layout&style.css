@@ -1,49 +1,83 @@
 * {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 h1 {
-    text-align: center;
-    width:100%;
-    color: black;
+  text-align: center;
+  width: 100%;
+  color: black;
+  margin: 20px 0;
+}
+
+h3 {
+  margin-bottom: 5px;
+  font-weight: normal;
+}
+
+h4{
+    margin-bottom: 5px;
 }
 
 .cheese-review {
-    position: relative;
-    width: 100%;
-    height: 100%;
+  position: relative;
+  width: 96%;
+  height: 100%;
+  margin: 0 2% 20px 2%;
 }
 
 .cheese-data {
- background-color: rgb(238, 238, 129);
- border-radius: 15px;
+  background-color: rgb(238, 238, 129);
+  border-radius: 15px;
+  margin-bottom: 20px;
+  height: 303px;
+  padding: 5px 15px;
+  line-height: 45px;
+}
 
+.cheese-data h3:nth-child(1)::before{
+  content: "Texture: ";
+  font-weight: bold;
+}
+
+.cheese-data h3:nth-child(2)::before{
+  content: "Milk Source: ";
+  font-weight: bold;
+}
+
+.cheese-data h3:nth-child(3)::before{
+  content: "Geographic Location: ";
+  font-weight: bold;
+}
+
+.cheese-data h3:nth-child(4)::before{
+  content: "Rating: ";
+  font-weight: bold;
+}
+
+.cheese-data h3:nth-child(5)::before{
+  content: "Comments: ";
+  font-weight: bold;
+}
+
+.cheese-data h3:last-child{
+    width: 60%;
 }
 
 .photo {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-image: url(./images/Parm.jpg);
-    width: 300px;
-    height: 303px;
-    background-size: cover;
-    border-radius: 15px;
+  position: absolute;
+  top: 5px;
+  right: 20px;
 }
-.photo2{
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-image: url(./images/Brie.jpg);
-    width: 300px;
+
+.photo img{
     height: 303px;
-    background-size: cover;
+    width: 300px;
     border-radius: 15px;
 }
 
 @media only screen and (max-width: 400px) {
-    .photo {
-        display: none;
-    }
+  .photo {
+    display: none;
+  }
 }
-

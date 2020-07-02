@@ -4,22 +4,43 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title th:text="${reviewToDisplay.cheeseName}"></title>
     <link rel="stylesheet" href="/review-layout&style.css" type="text/css" />
+    <link rel="stylesheet" href="/navbar.css" />
+    <link rel="stylesheet" href="/tag.css" />
+    <link rel="icon" th:href="@{'/images/' + ${reviewToDisplay.cheeseName} + '.jpg'}">
 </head>
 <body>
+    <nav>
+        <section class="navigation-bar">
+            <div class="left-side">
+                <div class="navigation-bar-top">
+                    <ul>
+                        <li><a href="../">Home</a></li>
+                        <li th:each="cheesecategory: ${cheesecategories}">
+                            <a th:text="${cheesecategory.cheeseType}"
+                               th:href="@{'/categories/' + ${cheesecategory.cheeseType}}">Cheese Type</a>
+                        </li>
+                        <div class="nav-title">Cheesy Reviews</div>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </nav>
 <h1 th:text="${reviewToDisplay.cheeseName}"></h1>
-
 <section class="cheese-review">
     <section class="cheese-data">
-        <h3 th:text="'Texture: '+${reviewToDisplay.texture}"></h3>
-        <h3 th:text="'Milk Source: '+${reviewToDisplay.milkSource}"></h3>
-        <h3 th:text="'Geographic Location: '+${reviewToDisplay.geographicLocation}"></h3>
-        <h3 th:text="'Rating: '+${reviewToDisplay.userRating}+' out of 5'"></h3>
-        <h3 th:text="'Comments: '+${reviewToDisplay.userReviewComment}"></h3>
+        <h3 th:text="${reviewToDisplay.texture}"></h3>
+        <h3 th:text="${reviewToDisplay.milkSource}"></h3>
+        <h3 th:text="${reviewToDisplay.geographicLocation}"></h3>
+        <h3 th:text="${reviewToDisplay.userRating}+' out of 5'"></h3>
+        <h3 th:text="${reviewToDisplay.userReviewComment}"></h3>
     </section>
-
-    <div class="photo"></div>
+    <div class="photo">
+        <img th:src="@{'/images/' + ${reviewToDisplay.cheeseName} + '.jpg'}"
+        onerror="this.onerror=null;this.src='/images/defaultcheeseimg.png';" />
+    </div>
+    <h4>Add New Hashtags Below</h4>
     <form action="/hashTags/add" method="POST">
         <label for="hashtag">
             #Hashtag:
@@ -29,24 +50,12 @@
         <input type="hidden" th:value="${reviewToDisplay.cheeseName}" name = "reviewName">
         <button type="submit">Submit</button>
     </form>
-<!--    Photo option needs to be added to the database -->
 </section>
-
 <section class="tag-section">
     <div class="color-section"></div>
-
-    <hr />
     <ul>
         <li th:each="hashTag: ${reviewToDisplay.hashTags}"><a th:href="@{'/hashTags/' + ${hashTag.hashTag}}" th:text ="'#' + ${hashTag.hashTag}"></a></li>
-<!--        We gotta adjust the tags later on -->
     </ul>
 </section>
-
-
-<a href="../">Home</a>
-<!--<a th:href="@{'/categories/' +${'cheesecategory.cheesetype'}}">Hard Cheeses</a>-->
-
-
-
 </body>
 </html>
